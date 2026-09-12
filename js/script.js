@@ -1,6 +1,6 @@
-const promoButton = document.querySelector('.promo-button');
+const promoButton = document.querySelector('#promobutton');
 
 promoButton.addEventListener('click', () => {
-    promoButton.textContent = "Promo beli 2 gratis tester! 1";
-    console.log("Promo Kopi nusa berhasil ditampilkan.");
+    promoButton.textContent = "Promo Kopi Kajen: Beli 2 Gratis 1 Untuk Cold Brew Aren !";
+    console.log("Promo Kopi Kajen siap dinikmati! Yuk dukung UMKM kopi lokal.");
 });
