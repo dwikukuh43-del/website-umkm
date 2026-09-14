@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Etalase Kopi Kajen</title>
+  <desc id="desc">Ilustrasi tiga kemasan kopi di atas meja kayu.</desc>
+  <rect width="640" height="360" fill="#fef3c7" />
+  <rect y="260" width="640" height="100" fill="#8d5a3b" />
+  <g fill="#6f3b1f">
+    <rect x="120" y="100" width="110" height="170" rx="12" />
+    <rect x="265" y="70" width="110" height="200" rx="12" />
+    <rect x="410" y="115" width="110" height="155" rx="12" />
+  </g>
+  <g fill="#ffd166" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle">
+    <text x="175" y="190">Gayo</text>
+    <text x="320" y="175">Kopi Kajen</text>
+    <text x="465" y="195">Aren</text>
+  </g>
+</svg>

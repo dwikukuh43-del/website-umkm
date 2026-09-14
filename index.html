@@ -8,37 +8,61 @@
     </head>
 
     <body>
-        <main class="page">
-            <section class="hero">
-            <p class="eyebrow"> UMKM Pekalongan</p>
-            <h1>  Kopi Kajen</h1>
-            <p>   kopi lokal pilihan orang Orang</p>
-            <button id="promobutton" type="button">  "lihat promo hari ini"</button>
-    </section>
+        <a class="skip-link" href="#konten">Lewati ke konten utama</a>
+        <header class="site-header">
+            <nav class="nav" aria-label="Navigasi utama">
+                <a class="brand" href="index.html">Kopi Kajen</a>
+                <ul>
+                    <li><a aria-current="page" href="index.html">Beranda</a></li>
+                    <li><a href="tentang.html">Tentang Kami</a></li>
+                    <li><a href="#kontak-singkat">Kontak Kami</a></li>
+                    
+                </ul>
+            </nav>
+        </header>
+        <main id="konten" class="page">
+            <section class="hero" aria-labelledby="hero-title">
+                <p class="eyebrow">UMKM Pekalongan</p>
+                <h1 id="hero-title">Kopi Kajen</h1>
+                <p>Kopi lokal pilihan untuk teman belajar, bekerja, dan berdiskusi.</p>
+                <button id="promoButton" type="button">Lihat promo hari ini</button>
+                <img src="assets/images/etalase-kopi.svg" alt="Etalase Kopi Kajen berisi kemasan kopi lokal" />
+            </section>
 
-    <section aria-labelledby="produk-title">
-    <h2 id="produk-title"> Produk Unggulan</h2>
-    <ul class="products">
-            <li> kopi Tubruk Rumah Rp18.000</li>
-            <li> Cold Brew Aren Rp22.000</li>
-            <li> Kopi Susu Aren Rp20.000</li>
-            </ul>
-    </section>
-
-                <!-- Section Jam Buka dan Lokasi -->
-            <section aria-labelledby="info-title">
-            <h2 id="info-title">Jam Buka dan Lokasi</h2>
-
-            <h3>Jam Buka</h3>
-            <p>Senin - Sabtu: 08.00 - 21.00 WIB</p>
-            <p>Minggu: 09.00 - 20.00 WIB</p>
-
-            <h3>Lokasi</h3>
-            <p>Kopi Kajen, Pekalongan</p>
-            <p>Jl. Raya Kajen, Pekalongan, Jawa Tengah</p>
-        </section>
-
+            <section aria-labelledby="produk-title">
+                <div class="product-list">
+                    <article class="product-card">
+                        <h3>Kopi Tubruk Rumah</h3>
+                        <p>Rasa klasik dengan aroma kuat untuk teman memulai hari.</p>
+                        <p class="price">Rp18.000</p>
+                    </article>
+                    <article class="product-card">
+                        <h3>Cold Brew Aren</h3>
+                        <p>Minuman kopi dingin dengan manis aren yang seimbang.</p>
+                        <p class="price">Rp22.000</p>
+                    </article>
+                    <article class="product-card">
+                        <h3>Kopi Susu Aren</h3>
+                        <p>Minuman kopi susu dengan manis aren yang seimbang.</p>
+                        <p class="price">Rp20.000</p>
+                    </article>
+                </div>
+            </section> 
+            <section id="kontak-singkat" aria-labelledby="kontak-title">
+                <h2 id="kontak-title">Kontak Singkat</h2>
+                    <p>
+                        Kopi Kajen Berada di Kajen, Pekalongan.
+                    </p>
+                    <p>
+                        Jam layanan: Senin–Sabtu, 09.00–23.00 WIB.
+                    </p>
+                    <p>
+                        Hubungi Kopi Kajen melalui Instagram @KopiKajen.id_
+                    </p>
+            </section> 
         </main>
-
+        <footer class="site-footer">
+            <p>&copy; 2026 Kopi Kajen. Data pada halaman ini bersifat dummy.</p>
+        </footer>
         <script src="js/script.js"></script>
     </body>
