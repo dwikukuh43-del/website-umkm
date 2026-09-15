@@ -1,68 +1,474 @@
 <!DOCTYPE html>
 <html lang="id">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title> Kopi Kajen - website umkm</title>
-        <link rel="stylesheet" href="css/style.css"/>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Juara & Kenangan Tapak Suci</title>
 
-    <body>
-        <a class="skip-link" href="#konten">Lewati ke konten utama</a>
-        <header class="site-header">
-            <nav class="nav" aria-label="Navigasi utama">
-                <a class="brand" href="index.html">Kopi Kajen</a>
-                <ul>
-                    <li><a aria-current="page" href="index.html">Beranda</a></li>
-                    <li><a href="tentang.html">Tentang Kami</a></li>
-                    <li><a href="#kontak-singkat">Kontak Kami</a></li>
-                    
-                </ul>
-            </nav>
-        </header>
-        <main id="konten" class="page">
-            <section class="hero" aria-labelledby="hero-title">
-                <p class="eyebrow">UMKM Pekalongan</p>
-                <h1 id="hero-title">Kopi Kajen</h1>
-                <p>Kopi lokal pilihan untuk teman belajar, bekerja, dan berdiskusi.</p>
-                <button id="promoButton" type="button">Lihat promo hari ini</button>
-                <img src="assets/images/etalase-kopi.svg" alt="Etalase Kopi Kajen berisi kemasan kopi lokal" />
-            </section>
+    <!-- Font Google (Plus Jakarta Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-            <section aria-labelledby="produk-title">
-                <div class="product-list">
-                    <article class="product-card">
-                        <h3>Kopi Tubruk Rumah</h3>
-                        <p>Rasa klasik dengan aroma kuat untuk teman memulai hari.</p>
-                        <p class="price">Rp18.000</p>
-                    </article>
-                    <article class="product-card">
-                        <h3>Cold Brew Aren</h3>
-                        <p>Minuman kopi dingin dengan manis aren yang seimbang.</p>
-                        <p class="price">Rp22.000</p>
-                    </article>
-                    <article class="product-card">
-                        <h3>Kopi Susu Aren</h3>
-                        <p>Minuman kopi susu dengan manis aren yang seimbang.</p>
-                        <p class="price">Rp20.000</p>
-                    </article>
-                </div>
-            </section> 
-            <section id="kontak-singkat" aria-labelledby="kontak-title">
-                <h2 id="kontak-title">Kontak Singkat</h2>
-                    <p>
-                        Kopi Kajen Berada di Kajen, Pekalongan.
-                    </p>
-                    <p>
-                        Jam layanan: Senin–Sabtu, 09.00–23.00 WIB.
-                    </p>
-                    <p>
-                        Hubungi Kopi Kajen melalui Instagram @KopiKajen.id_
-                    </p>
-            </section> 
-        </main>
-        <footer class="site-footer">
-            <p>&copy; 2026 Kopi Kajen. Data pada halaman ini bersifat dummy.</p>
-        </footer>
-        <script src="js/script.js"></script>
-    </body>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR STICKY MODERN GLASSMORPHISM */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .navbar-brand {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-brand span {
+            color: #ef4444;
+        }
+
+        /* TOMBOL HUBUNGI SAYA (NAVY & LEBIH KECIL) */
+        .btn-contact-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #1e293b, #0f172a) !important;
+            color: #ffffff;
+            padding: 6px 14px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-contact-nav svg {
+            width: 12px;
+            height: 12px;
+            fill: #ffffff !important;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-contact-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(30, 41, 59, 0.6);
+            background: linear-gradient(135deg, #334155, #1e293b) !important;
+        }
+
+        /* HERO BANNER SECTION */
+        .hero-banner {
+            position: relative;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.85) 60%, rgba(15, 23, 42, 0.98) 100%), url('bersama.jpeg');
+            background-size: cover;
+            background-position: center 20%;
+            background-repeat: no-repeat;
+            color: #ffffff;
+            text-align: center;
+            padding: 240px 20px 80px; 
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            min-height: 85vh;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        /* ANIMASI GERAK TEKS HERO */
+        .badge-tag-modern {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 8px 22px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            animation: floatSlow 3.5s ease-in-out infinite;
+        }
+
+        .glow-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #f59e0b;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #f59e0b, 0 0 20px #f59e0b;
+            animation: pulse 1.8s infinite;
+        }
+
+        .badge-text {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        .animated-title {
+            display: block;
+            background: linear-gradient(90deg, #ffffff, #e2e8f0, #ffffff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShimmer 4s ease-in-out infinite, floatSlow 3.5s ease-in-out 0.2s infinite;
+        }
+
+        .animated-name {
+            display: inline-block;
+            background: linear-gradient(90deg, #f87171, #ef4444, #fca5a5, #ef4444);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShimmer 3s ease-in-out infinite, floatSlow 3.5s ease-in-out 0.4s infinite;
+            filter: drop-shadow(0px 4px 12px rgba(239, 68, 68, 0.4));
+        }
+
+        .animated-desc {
+            animation: floatSlow 3.5s ease-in-out 0.6s infinite;
+        }
+
+        .hero-banner h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-banner p {
+            font-size: 1.05rem;
+            color: #cbd5e1;
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @keyframes textShimmer {
+            0% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+            100% { background-position: 0% center; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+            70% { transform: scale(1.15); box-shadow: 0 0 0 8px rgba(245, 158, 11, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+        }
+
+        /* GALERI SECTION */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 30px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #1e293b;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(239, 68, 68, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 230px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.08);
+        }
+
+        .card-body {
+            padding: 24px;
+        }
+
+        .card-body .date {
+            font-size: 0.75rem;
+            color: #ef4444;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .card-body h3 {
+            font-size: 1.2rem;
+            color: #f8fafc;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .card-body p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        /* MODAL POPUP */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(10px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: #94a3b8;
+            font-size: 35px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: #ffffff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px;
+            background-color: #0b0f19;
+            color: #64748b;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero-banner {
+                padding-top: 180px;
+            }
+            .hero-banner h1 {
+                font-size: 2rem;
+            }
+            .navbar {
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="#" class="navbar-brand">Tapak Suci <span>Kukuh</span></a>
+        
+        <a href="https://wa.me/6281234567890?text=Halo%20Kukuh,%20saya%20melihat%20galeri%20website%20Tapak%20Suci%20kamu!" target="_blank" class="btn-contact-nav">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+            </svg>
+            <span>Hubungi Saya</span>
+        </a>
+    </nav>
+
+    <!-- HERO BANNER SECTION -->
+    <header class="hero-banner">
+        <div class="hero-content">
+            <div class="badge-tag-modern">
+                <span class="glow-dot"></span>
+                <span class="badge-text">Pencak Silat Tapak Suci</span>
+            </div>
+
+            <h1>
+                <span class="animated-title">PERKENALKAN SAYA</span>
+                <span class="animated-name">KUKUH DWI SETIADI</span>
+            </h1>
+
+            <p class="animated-desc">Selamat datang di galeri resmi rekam jejak perjuangan, momen kebersamaan, dan koleksi prestasi medali dalam dunia Pencak Silat Tapak Suci.</p>
+        </div>
+    </header>
+
+    <!-- GALERI (6 DOKUMENTASI FOTO) -->
+    <div class="section-title">
+        <h2>DOKUMENTASI MOMEN</h2>
+        <p>Kumpulan kenangan pertandingan</p>
+    </div>
+
+    <main class="gallery-container">
+        <!-- Foto 1 -->
+        <article class="card" onclick="openModal('foto-1.jpeg.jpeg')">
+            <div class="card-img"><img src="foto-1.jpeg.jpeg" alt="Kejuaraan Pencak Silat"></div>
+            <div class="card-body">
+                <span class="date">Momen Perolehan Medali</span>
+                <h3>Kejuaraan Pencak Silat</h3>
+                <p>Momen kebanggaan bersama saat berhasil menyabet medali emas, perak, dan perunggu.</p>
+            </div>
+        </article>
+
+        <!-- Foto 2 -->
+        <article class="card" onclick="openModal('foto-2.jpeg.jpeg')">
+            <div class="card-img"><img src="foto-2.jpeg.jpeg" alt="Penyerahan Medali"></div>
+            <div class="card-body">
+                <span class="date">Medali Juara</span>
+                <h3>Penyerahan Medali</h3>
+                <p>Melaksanakan upacara penyerahan medali kepada atlet yang telah meraih prestasi.</p>
+            </div>
+        </article>
+
+        <!-- Foto 3 -->
+        <article class="card" onclick="openModal('foto-3.jpeg.jpeg')">
+            <div class="card-img"><img src="foto-3.jpeg.jpeg" alt="Penyerahan Piala Juara Umum"></div>
+            <div class="card-body">
+                <span class="date">Juara Umum</span>
+                <h3>Penyerahan Piala Juara Umum</h3>
+                <p>Pekalongan Meraih Piala Juara Umum dalam Kejuaraan Pencak Silat.</p>
+            </div>
+        </article>
+
+        <!-- Foto 4 -->
+        <article class="card" onclick="openModal('foto-4.jpeg.jpeg')">
+            <div class="card-img"><img src="foto-4.jpeg.jpeg" alt="Sertifikat Prestasi"></div>
+            <div class="card-body">
+                <span class="date">Sertifikat</span>
+                <h3>Sertifikat Prestasi</h3>
+                <p>Kumpulan sertifikat prestasi yang diperoleh oleh atlet dalam berbagai kejuaraan.</p>
+            </div>
+        </article>
+
+        <!-- Foto 5 -->
+        <article class="card" onclick="openModal('foto-5.jpeg.jpeg')">
+            <div class="card-img"><img src="foto-5.jpeg.jpeg" alt="Momen Foto Bersama"></div>
+            <div class="card-body">
+                <span class="date">Foto Bersama</span>
+                <h3>Momen Foto Bersama</h3>
+                <p>Kebersamaan dan semangat juang kontingen Tapak Suci.</p>
+            </div>
+        </article>
+
+        <!-- Foto 6 -->
+        <article class="card" onclick="openModal('foto-6.jpeg.jpeg')">
+            <div class="card-img"><img src="foto-6.jpeg.jpeg" alt="Padepokan Tanjungsari"></div>
+            <div class="card-body">
+                <span class="date">Padepokan Tanjungsari</span>
+                <h3>Momen</h3>
+                <p>Kontingen Padepokan Tanjungsari.</p>
+            </div>
+        </article>
+    </main>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="imgFull">
+    </div>
+
+    <footer>
+        <p>&copy; Kukuh Dwi Setiadi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openModal(src) {
+            document.getElementById('imgFull').src = src;
+            document.getElementById('imageModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
