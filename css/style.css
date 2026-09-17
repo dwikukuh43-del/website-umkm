@@ -36,8 +36,8 @@ button {
     background: #ffd166;
     border: 0;
     border-radius: 999px;
-
 }
+
 .promo-text {
     display: none;
     margin-top: 15px;
@@ -47,6 +47,7 @@ button {
     border-radius: 12px;
     font-weight: bold;
 }
+
 .skip-link { position: absolute; left: -9999px; padding: 8px 12px; color: white; background: #2f2118; }
 .skip-link:focus { top: 8px; left: 8px; }
 .site-header { padding: 16px 20px; background: white; border-bottom: 1px solid #dccbbc; }
@@ -58,3 +59,11 @@ button {
 a:focus-visible,
 button:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
 .site-footer { padding: 24px 20px; color: white; text-align: center; background: #2f2118; }
+
+/* Styling Tambahan P03 */
+img { max-width: 100%; height: auto; }
+figure { margin: 0 0 24px; }
+figcaption { margin-top: 8px; color: #6b5b52; }
+table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+caption { margin-bottom: 8px; font-weight: 700; text-align: left; }
+th, td { padding: 10px; text-align: left; border: 1px solid #dccbbc; }
