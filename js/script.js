@@ -1,13 +1,11 @@
-// Fitur Tombol Promo (dari tugas sebelumnya)
 const promoButton = document.getElementById("promoButton");
 
 if (promoButton) {
   promoButton.addEventListener("click", function () {
-    alert("Promo hari ini: Beli 2 Cold Brew Gratis 1 Kopi Tubruk!");
+    promoButton.textContent = "Promo hari ini: Beli 2 Cold Brew Gratis 1 Kopi Tubruk!";
   });
 }
 
-// Fitur Membaca Tabel (Kode Baru)
 const rows = document.querySelectorAll("tbody tr");
 
 if (rows.length > 0) {
