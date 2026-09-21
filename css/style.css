@@ -66,3 +66,8 @@ figcaption { margin-top: 8px; color: #6b5b52; }
 table { width: 100%; border-collapse: collapse; margin-top: 12px; }
 caption { margin-bottom: 8px; font-weight: 700; text-align: left; }
 th, td { padding: 10px; text-align: left; border: 1px solid #dccbbc; }
+
+.field { margin-bottom: 16px; }
+.field label { display: block; margin-bottom: 6px; }
+fieldset { margin: 0 0 16px; }
+#preview-form { padding: 16px; white-space: pre-wrap; background: white; border: 1px solid #ccc; }

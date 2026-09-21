@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kontak Kopi Kajen - Website UMKM</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/form.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#konten">Lewati ke konten utama</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navigasi utama">
+        <a class="brand" href="index.html">Kopi Kajen</a>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang.html">Tentang Kami</a></li>
+          <li><a href="produk.html">Produk</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a aria-current="page" href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main id="konten" class="page">
+      <h1>Kontak Kopi Kajen</h1>
+      <p>Silakan kirim pertanyaan tentang produk, pesanan, atau kerja sama.</p>
+
+      <form id="form-kontak" action="#" method="post">
+        <div class="field">
+          <label for="nama">Nama lengkap</label>
+          <input id="nama" name="nama" type="text" autocomplete="name" required />
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+        </div>
+
+        <div class="field">
+          <label for="whatsapp">WhatsApp</label>
+          <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" required />
+        </div>
+
+        <div class="field">
+          <label for="waktu">Waktu Pengiriman</label>
+          <select id="waktu" name="waktu" required>
+            <option value="">Pilih waktu</option>
+            <option value="pagi">Pagi </option>
+            <option value="siang">Siang </option>
+            <option value="sore">Sore </option>
+            <option value="malam">Malam </option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="paket">Paket yang diminati</label>
+          <select id="paket" name="paket" required>
+            <option value="">Pilih paket</option>
+            <option value="rumahan">Paket rumahan</option>
+            <option value="kantor">Paket kantor</option>
+            <option value="reseller">Paket reseller</option>
+          </select>
+        </div>
+
+        <fieldset>
+          <legend>Topik pertanyaan</legend>
+          <label><input type="radio" name="topik" value="produk" required /> Informasi produk</label>
+          <label><input type="radio" name="topik" value="pesanan" /> Status pesanan</label>
+          <label><input type="radio" name="topik" value="kerja-sama" /> Kerja sama</label>
+        </fieldset>
+
+        <div class="field">
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" name="pesan" rows="5" required minlength="10"></textarea>
+        </div>
+
+        <button type="submit">Tampilkan Preview</button>
+      </form>
+
+      <section aria-labelledby="preview-title">
+        <h2 id="preview-title">Preview Data</h2>
+        <pre id="preview-form" aria-live="polite">Data form akan muncul setelah disubmit.</pre>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Kopi Kajen. Data pada halaman ini bersifat dummy.</p>
+    </footer>
+  </body>
+</html>
