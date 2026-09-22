@@ -13,6 +13,7 @@ form.addEventListener("submit", (event) => {
     `Waktu pengiriman : ${data.get("waktu")}`,
     `Paket            : ${data.get("paket")}`,
     `Topik            : ${data.get("topik")}`,
-    `Pesan            : ${data.get("pesan")}`
+    `Pesan            : ${data.get("pesan")}`,
+    `Metode kontak    : ${data.get("metode")}`
   ].join("\n");
 });
