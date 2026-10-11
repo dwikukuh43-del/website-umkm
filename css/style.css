@@ -62,17 +62,31 @@ a:hover { color: var(--color-primary-strong); }
   border-top: 1px solid var(--color-border);
   border-bottom: 0;
 }
+
 .nav,
 .page { width: min(100% - 2rem, 60rem); margin-inline: auto; }
+.nav {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: space-between;
+}
 .brand {
   display: inline-block;
-  margin-bottom: var(--space-2);
+  margin-bottom: 0;
   color: var(--color-text);
   font-weight: 800;
   text-decoration: none;
 }
-.nav ul { padding: 0; margin: 0; list-style: none; }
-.nav li { display: inline-block; margin: 0 var(--space-2) var(--space-1) 0; }
+.nav ul { 
+  padding: 0; 
+  margin: 0; 
+  list-style: none;
+  display: flex; 
+  gap: var(--space-2); 
+  flex-wrap: wrap; 
+}
+.nav li { margin: 0; }
 .nav a[aria-current="page"] {
   padding: var(--space-1) var(--space-2);
   color: var(--color-primary-strong);
@@ -88,13 +102,16 @@ a:hover { color: var(--color-primary-strong); }
   color: var(--color-surface);
   background: var(--color-primary);
   border-radius: var(--radius-md);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-4);
+  align-items: center;
 }
-h1,
-h2,
-h3 { line-height: 1.2; text-wrap: balance; }
+.hero-image { width: 100%; border-radius: var(--radius-md); }
+
+h1, h2, h3 { line-height: 1.2; text-wrap: balance; }
 h1 { font-size: clamp(2rem, 6vw, 3rem); }
-p,
-li { max-width: 68ch; }
+p, li { max-width: 68ch; }
 .eyebrow { color: var(--color-primary); font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
 .hero .eyebrow { color: #fef3c7; }
 .price { color: var(--color-primary-strong); font-weight: 800; }
@@ -138,6 +155,39 @@ form {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
 }
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.product-badge {
+  align-self: flex-start;
+  padding: 0.25rem var(--space-2);
+  color: var(--color-primary-strong);
+  font-size: 0.875rem;
+  font-weight: 800;
+  background: #fef3c7;
+  border-radius: 999px;
+}
+.card-actions {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.product-grid,
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+.gallery-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 figure { margin-inline: 0; }
 figcaption,
 caption { color: var(--color-muted); }

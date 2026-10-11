@@ -1,97 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kontak Kopi Kajen - Website UMKM</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/form.js" defer></script>
-  </head>
-  <body>
-    <a class="skip-link" href="#konten">Lewati ke konten utama</a>
-    <header class="site-header">
-      <nav class="nav" aria-label="Navigasi utama">
-        <a class="brand" href="index.html">Kopi Kajen</a>
-        <ul>
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="tentang.html">Tentang Kami</a></li>
-          <li><a href="produk.html">Produk</a></li>
-          <li><a href="galeri.html">Galeri</a></li>
-          <li><a aria-current="page" href="kontak.html">Kontak</a></li>
-        </ul>
-      </nav>
-    </header>
-    
-    <main id="konten" class="page">
-      <h1>Kontak Kopi Kajen</h1>
-      <p>Silakan kirim pertanyaan tentang produk, pesanan, atau kerja sama.</p>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Kopi Kajen - Website UMKM</title>
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>
+        <a class="skip-link" href="#konten">Lewati ke konten utama</a>
+        <header class="site-header">
+            <nav class="nav" aria-label="Navigasi utama">
+                <a class="brand" href="index.html">Kopi Kajen</a>
+                <ul>
+                    <li><a aria-current="page" href="index.html">Beranda</a></li>
+                    <li><a href="tentang.html">Tentang Kami</a></li>
+                    <li><a href="produk.html">Produk</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </header>
 
-      <form id="form-kontak" action="#" method="post">
-        <div class="field">
-          <label for="nama">Nama lengkap</label>
-          <input id="nama" name="nama" type="text" autocomplete="name" required />
-        </div>
+        <main id="konten" class="page">
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-content">
+                    <p class="eyebrow">UMKM Pekalongan</p>
+                    <h1 id="hero-title">Kopi Kajen</h1>
+                    <p>Kopi lokal pilihan untuk teman belajar, bekerja, dan berdiskusi.</p>
+                    <button id="promoButton" type="button">Lihat promo hari ini</button>
+                </div>
+                <img class="hero-image" src="assets/images/etalase-kopi.jpg" alt="Etalase Kopi Kajen berisi kemasan kopi lokal" />
+            </section>
 
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required />
-        </div>
+            <section aria-labelledby="produk-title">
+                <div class="product-grid">
+                    <article class="product-card">
+                        <h3>Kopi Tubruk Rumah</h3>
+                        <p>Rasa klasik dengan aroma kuat untuk teman memulai hari.</p>
+                        <p class="price">Rp18.000</p>
+                        <div class="card-actions">
+                            <a class="button" href="kontak.html">Tanya produk</a>
+                            <a href="produk.html">Lihat produk</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <h3>Cold Brew Aren</h3>
+                        <p>Minuman kopi dingin dengan manis aren yang seimbang.</p>
+                        <p class="price">Rp22.000</p>
+                        <div class="card-actions">
+                            <a class="button" href="kontak.html">Tanya produk</a>
+                            <a href="produk.html">Lihat produk</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <h3>Kopi Susu Aren</h3>
+                        <p>Minuman kopi susu dengan manis aren yang seimbang.</p>
+                        <p class="price">Rp20.000</p>
+                        <div class="card-actions">
+                            <a class="button" href="kontak.html">Tanya produk</a>
+                            <a href="produk.html">Lihat produk</a>
+                        </div>
+                    </article>
+                </div>
+            </section> 
 
-        <div class="field">
-          <label for="whatsapp">WhatsApp</label>
-          <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" required />
-        </div>
+            <section id="kontak-singkat" aria-labelledby="kontak-title">
+                <h2 id="kontak-title">Kontak Singkat</h2>
+                <p>Kopi Kajen Berada di Kajen, Pekalongan.</p>
+                <p>Jam layanan: Senin–Sabtu, 09.00–23.00 WIB.</p>
+                <p>Hubungi Kopi Kajen melalui Instagram @KopiKajen.id_</p>
+            </section> 
+        </main>
 
-        <div class="field">
-          <label for="waktu">Waktu Pengiriman</label>
-          <select id="waktu" name="waktu" required>
-            <option value="">Pilih waktu</option>
-            <option value="pagi">Pagi </option>
-            <option value="siang">Siang </option>
-            <option value="sore">Sore </option>
-            <option value="malam">Malam </option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="paket">Paket yang diminati</label>
-          <select id="paket" name="paket" required>
-            <option value="">Pilih paket</option>
-            <option value="rumahan">Paket rumahan</option>
-            <option value="kantor">Paket kantor</option>
-            <option value="reseller">Paket reseller</option>
-          </select>
-        </div>
-
-        <fieldset>
-          <legend>Topik pertanyaan</legend>
-          <label><input type="radio" name="topik" value="produk" required /> Informasi produk</label>
-          <label><input type="radio" name="topik" value="pesanan" /> Status pesanan</label>
-          <label><input type="radio" name="topik" value="kerja sama" /> Kerja sama</label>
-        </fieldset>
-
-        <fieldset>
-          <legend>Metode kontak</legend>
-          <label><input type="radio" name="metode" value="email" /> Email</label>
-          <label><input type="radio" name="metode" value="whatsapp" /> WhatsApp</label>
-        </fieldset>
-
-        <div class="field">
-          <label for="pesan">Pesan</label>
-          <textarea id="pesan" name="pesan" rows="5" required minlength="10"></textarea>
-        </div>
-
-        <button type="submit">Tampilkan Preview</button>
-      </form>
-
-      <section aria-labelledby="preview-title">
-        <h2 id="preview-title">Preview Data</h2>
-        <pre id="preview-form" aria-live="polite">Data form akan muncul setelah disubmit.</pre>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <p>&copy; 2026 Kopi Kajen. Data pada halaman ini bersifat dummy.</p>
-    </footer>
-  </body>
+        <footer class="site-footer">
+            <p>&copy; 2026 Kopi Kajen. Data pada halaman ini bersifat dummy.</p>
+        </footer>
+        <script src="js/script.js"></script>
+    </body>
 </html>
