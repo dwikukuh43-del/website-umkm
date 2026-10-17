@@ -65,11 +65,13 @@ a:hover { color: var(--color-primary-strong); }
 
 .nav,
 .page { width: min(100% - 2rem, 60rem); margin-inline: auto; }
+
 .nav {
   display: flex;
+  flex-direction: column;
   gap: var(--space-3);
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 .brand {
   display: inline-block;
@@ -98,19 +100,19 @@ a:hover { color: var(--color-primary-strong); }
 .page { padding-block: var(--space-5); }
 
 .hero {
-  padding: var(--space-5);
+  padding: var(--space-4);
   color: var(--color-surface);
   background: var(--color-primary);
   border-radius: var(--radius-md);
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1fr;
   gap: var(--space-4);
   align-items: center;
 }
 .hero-image { width: 100%; border-radius: var(--radius-md); }
 
 h1, h2, h3 { line-height: 1.2; text-wrap: balance; }
-h1 { font-size: clamp(2rem, 6vw, 3rem); }
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
 p, li { max-width: 68ch; }
 .eyebrow { color: var(--color-primary); font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
 .hero .eyebrow { color: #fef3c7; }
@@ -181,16 +183,34 @@ form {
 .product-grid,
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--space-3);
-}
-.gallery-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 figure { margin-inline: 0; }
 figcaption,
 caption { color: var(--color-muted); }
+
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  margin-block: var(--space-3);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+.table-scroll:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+.table-scroll table {
+  margin: 0;
+  box-shadow: none;
+  border: 0;
+  min-width: 40rem;
+}
+
 table { width: 100%; border-collapse: collapse; border-radius: 0; }
 caption { margin-bottom: var(--space-2); font-weight: 700; text-align: left; }
 th,
@@ -229,4 +249,28 @@ audio { max-width: 100%; }
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
+}
+
+@media (min-width: 42rem) {
+  .nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .hero {
+    grid-template-columns: 1.2fr 0.8fr;
+    padding: var(--space-5);
+  }
+}
+
+@media (min-width: 48rem) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 60rem) {
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
