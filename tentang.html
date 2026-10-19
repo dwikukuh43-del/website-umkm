@@ -9,9 +9,25 @@
   <body>
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
     <header class="site-header">
-      <nav class="nav" aria-label="Navigasi utama">
+      <nav class="nav container" aria-label="Navigasi utama">
         <a class="brand" href="index.html">Kopi Kajen</a>
-        <ul>
+
+        <details class="mobile-menu">
+          <summary aria-label="Buka menu navigasi">
+            <span class="hamburger" aria-hidden="true">☰</span>
+            <span>Menu</span>
+          </summary>
+
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a aria-current="page" href="tentang.html">Tentang Kami</a></li>
+            <li><a href="produk.html">Produk</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+        </details>
+
+        <ul class="desktop-menu">
           <li><a href="index.html">Beranda</a></li>
           <li><a aria-current="page" href="tentang.html">Tentang Kami</a></li>
           <li><a href="produk.html">Produk</a></li>

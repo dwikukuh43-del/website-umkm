@@ -68,11 +68,12 @@ a:hover { color: var(--color-primary-strong); }
 
 .nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   gap: var(--space-3);
-  align-items: flex-start;
-  justify-content: flex-start;
 }
+
 .brand {
   display: inline-block;
   margin-bottom: 0;
@@ -80,6 +81,7 @@ a:hover { color: var(--color-primary-strong); }
   font-weight: 800;
   text-decoration: none;
 }
+
 .nav ul { 
   padding: 0; 
   margin: 0; 
@@ -98,6 +100,51 @@ a:hover { color: var(--color-primary-strong); }
   border-radius: var(--radius-sm);
 }
 .page { padding-block: var(--space-5); }
+
+.nav .desktop-menu {
+  display: none; 
+}
+
+.mobile-menu {
+  position: relative;
+  width: auto;
+}
+
+.mobile-menu summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+}
+
+.mobile-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-menu ul {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  left: auto;
+  min-width: 12rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-2);
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  z-index: 10;
+}
 
 .hero {
   padding: var(--space-4);
@@ -257,6 +304,21 @@ audio { max-width: 100%; }
     align-items: center;
     justify-content: space-between;
   }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .nav .desktop-menu {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
   .hero {
     grid-template-columns: 1.2fr 0.8fr;
     padding: var(--space-5);
