@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Produk Kopi Kajen - Website UMKM</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/app.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#konten">Lewati ke konten utama</a>
@@ -40,6 +41,16 @@
   <main id="konten" class="page">
     <h1>Produk Kopi Kajen</h1>
     <p>Pilih produk sesuai kebutuhan seduh harian, kantor, atau hadiah.</p>
+
+    <!-- P09: target render JavaScript -->
+    <section class="section" aria-labelledby="produk-dinamis-title">
+      <div class="section-header">
+        <p class="eyebrow">Data JavaScript</p>
+        <h2 id="produk-dinamis-title">Produk dari Data Lokal</h2>
+        <p id="produk-ringkasan">Data produk akan dimuat melalui JavaScript.</p>
+      </div>
+      <div id="produk-dinamis" class="js-product-grid"></div>
+    </section>
 
     <section aria-labelledby="visual-produk-title">
       <h2 id="visual-produk-title" class="sr-only">Visual Produk</h2>
