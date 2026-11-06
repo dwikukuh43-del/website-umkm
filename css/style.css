@@ -370,3 +370,26 @@ audio { max-width: 100%; }
   background: #fee2e2;
   color: #991b1b;
 }
+
+.price-old {
+  margin-right: 6px;
+  color: var(--color-muted);
+  font-weight: 400;
+  text-decoration: line-through;
+}
+
+.discount-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 8px;
+  color: #991b1b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: #fee2e2;
+  border-radius: 999px;
+}
+
+#produk-unggulan {
+  font-weight: 700;
+  color: var(--color-primary, #6f3b1f);
+}

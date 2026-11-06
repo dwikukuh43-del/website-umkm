@@ -42,16 +42,6 @@
     <h1>Produk Kopi Kajen</h1>
     <p>Pilih produk sesuai kebutuhan seduh harian, kantor, atau hadiah.</p>
 
-    <!-- P09: target render JavaScript -->
-    <section class="section" aria-labelledby="produk-dinamis-title">
-      <div class="section-header">
-        <p class="eyebrow">Data JavaScript</p>
-        <h2 id="produk-dinamis-title">Produk dari Data Lokal</h2>
-        <p id="produk-ringkasan">Data produk akan dimuat melalui JavaScript.</p>
-      </div>
-      <div id="produk-dinamis" class="js-product-grid"></div>
-    </section>
-
     <section aria-labelledby="visual-produk-title">
       <h2 id="visual-produk-title" class="sr-only">Visual Produk</h2>
       <figure>
@@ -74,9 +64,9 @@
       <div class="product-grid">
         <article class="product-card">
           <span class="product-badge">Terlaris</span>
-          <h3>Kopi Tubruk Signature</h3>
+          <h3>Kopi Tubruk Rumah</h3>
           <p>Karakter cokelat dan kacang dengan body yang kuat.</p>
-          <p class="price">Rp45.000</p>
+          <p class="price">Rp18.000</p>
           <div class="card-actions">
             <a class="button" href="kontak.html">Tanya produk</a>
             <a href="#harga-title">Lihat tabel harga</a>
@@ -94,8 +84,18 @@
         </article>
         <article class="product-card">
           <span class="product-badge">Hemat</span>
-          <h3>Paket Seduh Enak</h3>
+          <h3>Kopi Susu Aren</h3>
           <p>Kopi 250 gram, filter, dan panduan seduh untuk pemula.</p>
+          <p class="price">Rp20.000</p>
+          <div class="card-actions">
+            <a class="button" href="kontak.html">Tanya produk</a>
+            <a href="#harga-title">Lihat tabel harga</a>
+          </div>
+        </article>
+        <article class="product-card">
+          <span class="product-badge">Baru</span>
+          <h3>Paket Seduh Enak</h3>
+          <p>Kopi dingin dengan susu dan manis aren seimbang.</p>
           <p class="price">Rp75.000</p>
           <div class="card-actions">
             <a class="button" href="kontak.html">Tanya produk</a>
@@ -103,6 +103,16 @@
           </div>
         </article>
       </div>
+    </section>
+
+    <section class="section" aria-labelledby="produk-dinamis-title">
+      <div class="section-header">
+        <p class="eyebrow">Data JavaScript</p>
+        <h2 id="produk-dinamis-title">Produk dari Data Lokal</h2>
+        <p id="produk-ringkasan">Data produk akan dimuat melalui JavaScript.</p>
+        <p id="produk-unggulan">Produk unggulan akan ditentukan melalui JavaScript.</p>
+      </div>
+      <div id="produk-dinamis" class="js-product-grid"></div>
     </section>
 
     <section aria-labelledby="harga-title">
@@ -130,7 +140,7 @@
             <tr>
               <th scope="row">Cold Brew Aren</th>
               <td>Botol 250 ml</td>
-              <td>Terbatas (5)</td>
+              <td>Tersedia (5)</td>
               <td>Kopi dingin dengan manis aren seimbang</td>
               <td>Rp22.000</td>
             </tr>
@@ -140,6 +150,13 @@
               <td>Tersedia (20)</td>
               <td>Kopi susu creamy dengan gula aren</td>
               <td>Rp20.000</td>
+            </tr>
+            <tr>
+              <th scope="row">Paket Seduh Enak</th>
+              <td>1 paket</td>
+              <td>Tersedia (10)</td>
+              <td>Kopi dingin dengan susu dan manis aren seimbang</td>
+              <td>Rp75.000</td>
             </tr>
           </tbody>
         </table>
