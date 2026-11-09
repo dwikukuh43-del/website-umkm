@@ -105,14 +105,22 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="produk-dinamis-title">
-      <div class="section-header">
-        <p class="eyebrow">Data JavaScript</p>
+    <section class="product-section" aria-labelledby="produk-dinamis-title">
+      <div class="section-heading">
+        <p class="eyebrow">Katalog</p>
         <h2 id="produk-dinamis-title">Produk dari Data Lokal</h2>
-        <p id="produk-ringkasan">Data produk akan dimuat melalui JavaScript.</p>
+        <p id="produk-status" class="produk-status">Produk belum dimuat.</p>
         <p id="produk-unggulan">Produk unggulan akan ditentukan melalui JavaScript.</p>
       </div>
-      <div id="produk-dinamis" class="js-product-grid"></div>
+
+      <div class="filter-bar" aria-label="Filter kategori produk">
+        <button type="button" class="filter-button is-active" data-filter="Semua">Semua</button>
+        <button type="button" class="filter-button" data-filter="Kopi">Kopi</button>
+        <button type="button" class="filter-button" data-filter="Bundling">Bundling</button>
+        <button type="button" class="filter-button" data-filter="Aksesori">Aksesori</button>
+      </div>
+
+      <div id="produk-grid" class="js-product-grid" aria-live="polite"></div>
     </section>
 
     <section aria-labelledby="harga-title">

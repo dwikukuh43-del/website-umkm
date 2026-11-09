@@ -39,6 +39,18 @@ a { color: var(--color-primary); }
 a:hover { color: var(--color-primary-strong); }
 :focus-visible { outline: 3px solid var(--color-focus); outline-offset: 3px; }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .skip-link {
   position: absolute;
   top: -5rem;
@@ -344,6 +356,9 @@ audio { max-width: 100%; }
 }
 
 .js-product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: var(--space-4);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -392,4 +407,66 @@ audio { max-width: 100%; }
 #produk-unggulan {
   font-weight: 700;
   color: var(--color-primary, #6f3b1f);
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block: 1rem 1.5rem;
+}
+
+.filter-button {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: 0.65rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filter-button:hover,
+.filter-button:focus-visible {
+  color: var(--color-text);
+  background: var(--color-surface);
+  border-color: var(--color-primary);
+  outline: 3px solid rgb(111 59 31 / 20%);
+  outline-offset: 2px;
+}
+
+.filter-button.is-active,
+.filter-button.is-active:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  border: 1px dashed var(--color-border);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: var(--color-surface);
+  color: var(--color-muted);
+}
+
+.produk-status {
+  font-weight: 700;
+  color: var(--color-primary-strong);
+}
+
+.ghost-button {
+  margin-top: var(--space-2);
+  padding: 0.4rem 0.8rem;
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+}
+
+.ghost-button:hover {
+  color: var(--color-primary-strong);
+  background: var(--color-surface-soft);
+  border-color: var(--color-primary);
 }
